@@ -25,6 +25,14 @@ server.js
 5. [React](#react)
 6. [Airbnb Styleguide + Lint](#airbnb)
 
+## How To Use This Repo?
+You can follow along in the README, or you can clone this repo to your machine.
+
+When cloned,
+1. Run `npm install`
+2. Run `npm run build`
+3. Navigate to http://localhost:3000/ in your browser.
+
 
 ## <a name="start">How To Start</a>
 A note: for package installs, I use npm.
@@ -37,8 +45,8 @@ A note: for package installs, I use npm.
 ```
 npm init -y
 ```
-  * The `-y` populates some fields with default values. Omit if you want custom values.
-  * Here's some fun info about `package.json`: tps://docs.npmjs.com/files/package.json.
+  - The `-y` populates some fields with default values. Omit if you want custom values.
+  - Here's some fun info about `package.json`: https://docs.npmjs.com/files/package.json.
 
 ```json
 {
@@ -67,36 +75,31 @@ npm init -y
 
 
 ### <a name="webpack">Webpack4</a>
-5. Install some dev dependencies, for our development environment
-(Source: https://webpack.js.org/guides/getting-started/)
-  * webpack
-  * webpack-cli
-
-6. At this point, let's add a webpack script in `package.json`
+5. Install some dev dependencies, for our development environment -- (Source: https://webpack.js.org/guides/getting-started/)
+  - webpack
+  - webpack-cli
+  
+6. At this point, let's add a webpack script in `package.json` for development mode -- (Source: https://webpack.js.org/concepts/mode/).
 ```json
 "dev": "webpack --mode development -w"`
 ```
-(Source: https://webpack.js.org/concepts/mode/).
-  * `-w` is the watch flag
-  * when it's time for production env, you can add a separate script for that
+  - `-w` is the watch flag
+  - when it's time for production env, you can add a separate script for that
 
 7. While we're on the subject of Webpack, let's make a webpack.config.js file:
-What is the entry point?
-  * https://webpack.js.org/concepts/#entry
-  * defaults to `src/index.js`
-What is the output?
-  * https://webpack.js.org/concepts/#output
-  * describes what's going to happen with our bundled code. If this file doesn't already exist, Webpack will create the file with whatever name you've decided to give it, and it will reside in a folder that you decide as well.
+What is the entry point? -- (Source: https://webpack.js.org/concepts/#entry)
+  - defaults to `src/index.js`
+What is the output? -- (Source: https://webpack.js.org/concepts/#output)
+  - describes what's going to happen with our bundled code. If this file doesn't already exist, Webpack will create the file with whatever name you've decided to give it, and it will reside in a folder that you decide as well.
 
 8. Add a `src` folder, and a file in that folder called `index.jsx` (because we're doing a React app).
 
 9. Here, I'm placing it in a folder at my topmost level of my repo's filesystem, and I want that file to be called `public`. Again: if that folder doesn't exist already, Webpack will generate one.
-  * you can call the output file `main.js`, `compiled.js`, or whatever you want - I'm going with `bundle.js`
-  * you can call the output folder `dist`, `client`, or whatever you want - I'm going with `public`
+  - you can call the output file `main.js`, `compiled.js`, or whatever you want - I'm going with `bundle.js`
+  - you can call the output folder `dist`, `client`, or whatever you want - I'm going with `public`
 
 10. Add folder/file (for me, `public/bundle.js`) to .gitignore
 
-(See: https://webpack.js.org/guides/getting-started/#using-a-configuration)
 ```js
 const path = require('path');
 
@@ -108,10 +111,11 @@ module.exports = {
   },
 };
 ```
+For more configuration help, see: https://webpack.js.org/guides/getting-started/#using-a-configuration.
 
 11. In the `bundle.js`, we'll have our entry `.js` file as well as our `.jsx` files, so we want to handle that in the webpack config:
 (https://github.com/babel/babel-loader)
-(https://www.robinwieruch.de/minimal-react-webpack-babel-setup/ to combine the js/jsx tests into 1 rule)
+(https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
 
 ```js
 module: {
@@ -138,21 +142,21 @@ resolve: {
 
 13. Since we're using React, we'll need to transpile `jsx` -> `js`, so let's do some babel stuff in our **dev dependencies**:
 
-We go to https://babeljs.io/setup#installation, and we'll be using a couple of different buld tools:
+We go to https://babeljs.io/setup#installation, and we'll be using a couple of different build tools:
 
 Nodemon:
-  * @babel/cli
-  * @babel/preset-env
+  - @babel/cli
+  - @babel/preset-env
 
 Webpack + Babel:
-  * @babel/core
-  * babel-loader (https://webpack.js.org/loaders/babel-loader/)
+  - @babel/core
+  - babel-loader (https://webpack.js.org/loaders/babel-loader/)
 
-14. Add presets to .babelrc:
+14. Add presets to `.babelrc`:
 (Source: https://babeljs.io/docs/en/babel-preset-env)
 (Source: https://babeljs.io/docs/en/babel-preset-react)
-  * @babel/preset-env
-  * @babel/preset-react
+  - @babel/preset-env
+  - @babel/preset-react
 
 Source: https://babeljs.io/docs/en/presets
 ```json
@@ -163,10 +167,10 @@ Source: https://babeljs.io/docs/en/presets
 
 ### <a name="node">Node/Express</a>
 15. Install dependency:
-  * express
+  - express
 
 16. Install dev dependency:
-  * nodemon
+  - nodemon
 
 17. Add Node/Express server, create a "start" script in `package.json`.
 
@@ -175,8 +179,8 @@ Source: https://babeljs.io/docs/en/presets
 
 ### <a name="react">React</a>
 19. Install dependencies:
-  * react
-  * react-dom
+  - react
+  - react-dom
 
 20. We're serving the `public` folder to the browser from the server, so that's where we'll add a static `index.html` file.
 
