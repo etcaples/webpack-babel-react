@@ -14,14 +14,9 @@ module.exports = {
         exclude: /node_modules/,
         loader: ['babel-loader', 'eslint-loader'],
       },
-      // {
-      //   test: /\.jsx$/,
-      //   exclude: /node_modules/,
-      //   use: ['babel-loader', 'eslint-loader'],
-      // },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 };
