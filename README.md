@@ -26,7 +26,7 @@ server.js
 6. [Airbnb Styleguide + Lint](#airbnb)
 
 
-##<a name="start">How To Start</a>
+## <a name="start">How To Start</a>
 A note: for package installs, I use npm.
 
 1. Create new repo in GitHub
@@ -66,7 +66,7 @@ npm init -y
 4. Create .gitignore file and add `/node_modules/`. (When you run `npm install` for the first time, `package-lock.json` and `node_modules` will be generated in the file system.)
 
 
-###<a name="webpack">Webpack4</a>
+### <a name="webpack">Webpack4</a>
 5. Install some dev dependencies, for our development environment
 (Source: https://webpack.js.org/guides/getting-started/)
   * webpack
@@ -133,7 +133,7 @@ resolve: {
 }
 ```
 
-###<a name="babel">Babel7</a>
+### <a name="babel">Babel7</a>
 12. Create a `.babelrc` file. 
 
 13. Since we're using React, we'll need to transpile `jsx` -> `js`, so let's do some babel stuff in our **dev dependencies**:
@@ -161,7 +161,7 @@ Source: https://babeljs.io/docs/en/presets
 }
 ```
 
-###<a name="node">Node/Express</a>
+### <a name="node">Node/Express</a>
 15. Install dependency:
   * express
 
@@ -173,7 +173,7 @@ Source: https://babeljs.io/docs/en/presets
 18. You can run `npm run dev` and `npm start` in separate terminal workspaces, or you can combine the scripts and only have to run it once (check out package.json for an example)
 
 
-###<a name="react">React</a>
+### <a name="react">React</a>
 19. Install dependencies:
   * react
   * react-dom
@@ -185,7 +185,7 @@ Source: https://babeljs.io/docs/en/presets
 22. Write some React code.
 
 
-###<a name="airbnb">Airbnb Styleguide</a>
+### <a name="airbnb">Airbnb Styleguide</a>
 23. Add an `.eslintrc` file
 How to install: https://www.npmjs.com/package/eslint-config-airbnb
 Rules: https://github.com/airbnb/javascript
