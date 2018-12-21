@@ -26,9 +26,9 @@ server.js
 6. [Airbnb Styleguide + Lint](#airbnb)
 
 ## How To Use This Repo?
-You can follow along in the README, or you can clone this repo to your machine.
+You can follow along in the README, or you can fork this repo to your machine.
 
-When cloned,
+When forked & cloned,
 1. Run `npm install`
 2. Run `npm run build`
 3. Navigate to http://localhost:3000/ in your browser.
